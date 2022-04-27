@@ -62,19 +62,21 @@ console.log(nomesOrganizados);
 // com map // retorna
 const arrayNums = [1, 2, 3, 4];
 
-function multiplicaPorDez(num) {
-   return num * 10; 
+function multiplicaPorDez(num, index, array) {
+    array[index] = num * 10; // modifica array original
+    return num * 10; // retorno numero para criar novo array
 }
 
 const arrayNovo = arrayNums.map(multiplicaPorDez);
 
+console.log(arrayNums);
 console.log(arrayNovo);
 
-// com foreach // nao modifica
+// com foreach
 let arrayNums2 = [1, 2, 3, 4];
 
-function multiplicaPorDez2(num, index) {
-    arrayNums2[index] = num * 10; 
+function multiplicaPorDez2(num, index, array) {
+    array[index] = num * 10; 
 }
 
 arrayNums2.forEach(multiplicaPorDez2);
