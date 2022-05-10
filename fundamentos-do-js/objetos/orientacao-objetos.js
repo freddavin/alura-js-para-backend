@@ -37,3 +37,35 @@ class ContaPoupanca extends Conta {
 const contaLaliny = new ContaPoupanca("0452-1", "55222-7", 40000, 0.01);
 contaLaliny.render();
 contaLaliny.exibirSaldo();
+
+// bind - copiar função com as informações do this anterior (ligar)
+// apply - chamar função passando o objeto e um array com as informações
+// call - chamar função passando o objeto como parametro
+
+class Cliente {
+    constructor(nome, idade, email, cpf, conta) {
+        this.nome = nome;
+        this.idade = idade;
+        this.email = email;
+        this.cpf = cpf;
+        this.conta = [conta];
+    }
+}
+
+const clienteFred = new Cliente("Fred", 31, "fred!@gmail.com", "09093277693", contaFred);
+console.log(clienteFred);
+
+class ClienteEspecial extends Cliente {
+    constructor(nome, idade, email, cpf, conta, tipoCartao) {
+        super(nome, idade, email, cpf, conta);
+        this.tipoCartao = tipoCartao;
+    }
+}
+
+const clienteLaliny = new ClienteEspecial("Laliny", 30, "la@gmail.com", "09568432594", contaLaliny, "Black");
+console.log(clienteLaliny);
+
+
+const cota = [1];
+cota.push(2)
+console.log(cota);
