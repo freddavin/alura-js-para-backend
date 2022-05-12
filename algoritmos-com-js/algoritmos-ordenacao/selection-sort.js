@@ -1,3 +1,6 @@
+const trocaItem = require('./troca.js');
+//console.log(trocaItem);
+
 class Livro {
     constructor(nome, preco) {
         this.nome = nome;
@@ -36,28 +39,29 @@ const precosLivros = [new Livro("JS", 25), new Livro("PHP", 15), new Livro("JAVA
 
 precosLivros.forEach((_, index) => {
     let menorPreco = index;
-    for (let atual = index; atual < precosLivros.length; atual++) {
+    for (let atual = index; atual < precosLivros.length - 1; atual++) {
         if (precosLivros[atual].preco < precosLivros[menorPreco].preco) {
             menorPreco = atual;
         }
     }
-    let aux = precosLivros[index];
-    precosLivros[index] = precosLivros[menorPreco];
-    precosLivros[menorPreco] = aux;
+    //trocaItem(precosLivros, menorPreco, index);
+    // let aux = precosLivros[index];
+    // precosLivros[index] = precosLivros[menorPreco];
+    // precosLivros[menorPreco] = aux;
 });
-console.log(precosLivros);
+//console.log(precosLivros);
 
 
-// teste de for in e for of
-const obj = {
-    nome: "Fred",
-    idade: 31,
-    [Symbol.iterator]: function*() {
-        yield this.nome;
-        yield this.idade;
-    }
-}
+// // teste de for in e for of
+// // const obj = {
+// //     nome: "Fred",
+// //     idade: 31,
+// //     [Symbol.iterator]: function*() {
+// //         yield this.nome;
+// //         yield this.idade;
+// //     }
+// // }
 
-for (const key of obj) {
-    console.log(key);
-}
+// // for (const key of obj) {
+// //     console.log(key);
+// // }
