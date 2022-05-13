@@ -39,17 +39,14 @@ const precosLivros = [new Livro("JS", 25), new Livro("PHP", 15), new Livro("JAVA
 
 precosLivros.forEach((_, index) => {
     let menorPreco = index;
-    for (let atual = index; atual < precosLivros.length - 1; atual++) {
+    for (let atual = index; atual < precosLivros.length; atual++) {
         if (precosLivros[atual].preco < precosLivros[menorPreco].preco) {
             menorPreco = atual;
         }
     }
-    //trocaItem(precosLivros, menorPreco, index);
-    // let aux = precosLivros[index];
-    // precosLivros[index] = precosLivros[menorPreco];
-    // precosLivros[menorPreco] = aux;
+    trocaItem(precosLivros, menorPreco, index);
 });
-//console.log(precosLivros);
+console.log(precosLivros);
 
 
 // // teste de for in e for of
